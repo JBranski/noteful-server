@@ -5,15 +5,15 @@ const folderService = require( './../services/folderService' );
 // const noteService = require( '../services/noteService' );
 
 folderRouter
-	.get(( req, res, next ) => {
+	.get('/:id', ( req, res, next ) => {
 		folderService
-			.getFolderById( req.app.get( 'db' ), id )
+			.getFolderById( req.app.get( 'db' ), req.params.id) // or req.body.id  | doesnt need the /:id
 			.then( result => {
-				res.json();
+				res.json(result);
 			})
 			.catch( next );
 	})
-	.post( '/folders', jsonParser, ( req, res, next ) => {
+	.post( '/', jsonParser, ( req, res, next ) => {
 		const newFolder = {
 			id : req.body.id,
 			name : req.body.name
