@@ -13,6 +13,14 @@ folderRouter
 			})
 			.catch( next );
 	})
+	.get('/folders', ( req, res, next ) => {
+		folderService
+			.getFolders( req.app.get( 'db' )) // or req.body.id  | doesnt need the /:id
+			.then( result => {
+				res.json(result);
+			})
+			.catch( next );
+	})
 	.post( '/folders', jsonParser, ( req, res, next ) => {
 		const newFolder = {
 			id : req.body.id,

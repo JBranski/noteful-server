@@ -4,6 +4,14 @@ const jsonParser = express.json();
 const noteService = require( './../services/noteService' );
 
 noteRouter
+	.get('/notes', ( req, res, next ) => {
+		noteService
+			.getNotes( req.app.get( 'db' )) // or req.body.id  | doesnt need the /:id
+			.then( result => {
+				res.json(result);
+			})
+			.catch( next );
+	})
 	.post( '/notes', jsonParser, ( req, res, next ) => {
 		const newNote = {
 			id : req.body.id,

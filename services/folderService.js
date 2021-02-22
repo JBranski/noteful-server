@@ -16,6 +16,14 @@ const folderService = {
 			.then( result => {
 				return result;
 			})
+	},
+	getFolders( db ) {
+		return db
+			.select( '*' )
+			.from( 'folders' )
+			.then( result => {
+				return result;
+			})
 	}
 }
 

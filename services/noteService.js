@@ -7,6 +7,14 @@ const noteService = {
 			.then( result => {
 				return result[0]
 			});
+	},
+	getNotes( db ) {
+		return db
+			.select( '*' )
+			.from( 'notes' )
+			.then( result => {
+				return result;
+			})
 	}
 };
 
