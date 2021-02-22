@@ -12,10 +12,11 @@
 		"start": "node src/server.js",
 		"predeploy": "npm audit && npm run migrate:production",
 		"deploy": "git push heroku main"
-	  },
+	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"cors": "^2.8.5",
 		"express": "^4.17.1",
 		"knex": "^0.21.12",
 		"nodemon": "^2.0.6",
