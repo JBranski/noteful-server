@@ -4,7 +4,7 @@ const jsonParser = express.json();
 const noteService = require( './../services/noteService' );
 
 noteRouter
-	.post( '/', jsonParser, ( req, res, next ) => {
+	.post( '/notes', jsonParser, ( req, res, next ) => {
 		const newNote = {
 			id : req.body.id,
 			name : req.body.name
