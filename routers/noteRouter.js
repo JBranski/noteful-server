@@ -8,6 +8,7 @@ noteRouter
 		noteService
 			.getNotes( req.app.get( 'db' )) // or req.body.id  | doesnt need the /:id
 			.then( result => {
+				console.log(result)
 				res.json(result);
 			})
 			.catch( next );

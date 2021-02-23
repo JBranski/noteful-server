@@ -9,6 +9,7 @@ folderRouter
 		folderService
 			.getFolderById( req.app.get( 'db' ), req.params.id) // or req.body.id  | doesnt need the /:id
 			.then( result => {
+				console.log(result)
 				res.json(result);
 			})
 			.catch( next );
@@ -17,6 +18,7 @@ folderRouter
 		folderService
 			.getFolders( req.app.get( 'db' )) // or req.body.id  | doesnt need the /:id
 			.then( result => {
+				console.log(result)
 				res.json(result);
 			})
 			.catch( next );
