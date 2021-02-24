@@ -13,10 +13,13 @@ noteRouter
 			})
 			.catch( next );
 	})
-	.post( '/notes', jsonParser, ( req, res, next ) => {
+	.post('/notes', jsonParser, ( req, res, next ) => {
 		const newNote = {
 			id : req.body.id,
-			name : req.body.name
+			name : req.body.name,
+			content: req.body.content,
+			folderId: req.body.folderId,
+			modified: req.body.modified
 		};
 
 		NoteService
