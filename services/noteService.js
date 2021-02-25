@@ -13,6 +13,7 @@ const noteService = {
 			.select( '*' )
 			.from( 'notes' )
 			.then( result => {
+				console.log(result);
 				return result;
 			})
 	}
