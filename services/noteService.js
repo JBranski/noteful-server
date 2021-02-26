@@ -17,6 +17,11 @@ const noteService = {
 				return result;
 			})
 	}
+	deleteNote( db, id ) {
+		return db
+			.where({ id })
+			.delete()
+	}
 };
 
 module.exports = noteService;
