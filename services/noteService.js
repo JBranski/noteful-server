@@ -19,8 +19,12 @@ const noteService = {
 	},
 	deleteNote( db, id ) {
 		return db
-			.where({ id })
+			.from( 'notes' )
+			.where( {id} )
 			.delete()
+			.then( result => {
+				return result;
+			})
 	}
 };
 
