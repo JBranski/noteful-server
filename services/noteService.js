@@ -16,7 +16,7 @@ const noteService = {
 				console.log(result);
 				return result;
 			})
-	}
+	},
 	deleteNote( db, id ) {
 		return db
 			.where({ id })
