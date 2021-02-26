@@ -23,7 +23,7 @@ folderRouter
 			})
 			.catch( next );
 	})
-	.post( '/', jsonParser, ( req, res, next ) => {
+	.post( '/folders', jsonParser, ( req, res, next ) => {
 		const newFolder = {
 			id : req.body.id,
 			name : req.body.name
