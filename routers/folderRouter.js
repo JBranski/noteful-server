@@ -14,7 +14,7 @@ folderRouter
 			})
 			.catch( next );
 	})
-	.get('/folders', ( req, res, next ) => {
+	.get('/', ( req, res, next ) => {
 		folderService
 			.getFolders( req.app.get( 'db' )) // or req.body.id  | doesnt need the /:id
 			.then( result => {
@@ -23,7 +23,7 @@ folderRouter
 			})
 			.catch( next );
 	})
-	.post( '/folders', jsonParser, ( req, res, next ) => {
+	.post( '/', jsonParser, ( req, res, next ) => {
 		const newFolder = {
 			id : req.body.id,
 			name : req.body.name
