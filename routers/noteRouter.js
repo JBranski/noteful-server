@@ -13,7 +13,7 @@ noteRouter
 			})
 			.catch( next );
 	})
-	.post('/notes', jsonParser, ( req, res, next ) => {
+	.post('/', jsonParser, ( req, res, next ) => {
 		const newNote = {
 			id : req.body.id,
 			name : req.body.name,
@@ -21,8 +21,7 @@ noteRouter
 			folderId: req.body.folderId,
 			modified: req.body.modified
 		};
-
-		NoteService
+		noteService
 			.createNote( req.app.get( 'db' ), newNote )
 			.then( result => {
 				return res.status( 201 ).json( result );
