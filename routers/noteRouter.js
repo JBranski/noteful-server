@@ -13,7 +13,7 @@ noteRouter
 			})
 			.catch( next );
 	})
-	.post('/', jsonParser, ( req, res, next ) => {
+	.post('/api/notes', jsonParser, ( req, res, next ) => {
 		const newNote = {
 			id : req.body.id,
 			name : req.body.name,
