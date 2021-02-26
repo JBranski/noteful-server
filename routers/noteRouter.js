@@ -18,7 +18,7 @@ noteRouter
 			id : req.body.id,
 			name : req.body.name,
 			content: req.body.content,
-			folderId: req.body.folderId,
+			folderid: req.body.folderId,
 			modified: req.body.modified
 		};
 		noteService
