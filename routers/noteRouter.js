@@ -28,7 +28,7 @@ noteRouter
 			})
 			.catch( next );
 	})
-	.delete((req, res, next) => {
+	.delete('/:id', (req, res, next) => {
 		noteService
 			.deleteNote(
 				req.app.get('db'),
