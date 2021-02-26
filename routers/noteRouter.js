@@ -32,7 +32,7 @@ noteRouter
 		noteService
 			.deleteNote(
 				req.app.get('db'),
-				req.params.note_id
+				req.params.id
 			)
 			.then(result => {
 				res.json(result)
